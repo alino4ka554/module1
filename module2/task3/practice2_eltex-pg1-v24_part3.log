@@ -203,4 +203,49 @@ remote: Counting objects: 100% (13/13), done.
 remote: Compressing objects: 100% (9/9), done.
 remote: Total 13 (delta 0), reused 13 (delta 0), pack-reused 0 (from 0)
 Receiving objects: 100% (13/13), done.
+root@eltex-practice2-pg1-v24:~/module1# mkdir -p module2/task1
+root@eltex-practice2-pg1-v24:~/module1# mkdir module2/task2
+root@eltex-practice2-pg1-v24:~/module1# mkdir module2/task3
+root@eltex-practice2-pg1-v24:~/module1# cd ..
+root@eltex-practice2-pg1-v24:~# ls
+7zip.7z          etc_backup_gzip  motd.tar.gz
+bzip2.tar.bz2    gzip.tar.gz      practice2_eltex-pg1-v24_part1.log
+etc_backup       module1          practice2_eltex-pg1-v24_part2.log
+etc_backup_7zip  module1_clone    practice2_eltex-pg1-v24_part3.log
+root@eltex-practice2-pg1-v24:~# mv practice2_eltex-pg1-v24_part1.log module1/module2/task1
+root@eltex-practice2-pg1-v24:~# mv practice2_eltex-pg1-v24_part2.log module1/module2/task2
+root@eltex-practice2-pg1-v24:~# mv practice2_eltex-pg1-v24_part3.log module1/module2/task3
+root@eltex-practice2-pg1-v24:~# cd module1
+root@eltex-practice2-pg1-v24:~/module1# cd module2
+root@eltex-practice2-pg1-v24:~/module1/module2# cd task1
+root@eltex-practice2-pg1-v24:~/module1/module2/task1# ls
+practice2_eltex-pg1-v24_part1.log
+root@eltex-practice2-pg1-v24:~/module1/module2/task1# cd ..
+root@eltex-practice2-pg1-v24:~/module1/module2# cd ..
+root@eltex-practice2-pg1-v24:~/module1# git add .
+root@eltex-practice2-pg1-v24:~/module1# git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   module2/task1/practice2_eltex-pg1-v24_part1.log
+        new file:   module2/task2/practice2_eltex-pg1-v24_part2.log
+        new file:   module2/task3/practice2_eltex-pg1-v24_part3.log
+
+root@eltex-practice2-pg1-v24:~/module1# git commit
+[main 07c5f7d] вторая практика
+ 3 files changed, 593 insertions(+)
+ create mode 100644 module2/task1/practice2_eltex-pg1-v24_part1.log
+ create mode 100644 module2/task2/practice2_eltex-pg1-v24_part2.log
+ create mode 100644 module2/task3/practice2_eltex-pg1-v24_part3.log
+root@eltex-practice2-pg1-v24:~/module1# git push
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (9/9), 8.78 KiB | 8.78 MiB/s, done.
+Total 9 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/alino4ka554/module1.git
+   9012dbd..07c5f7d  main -> main
  
