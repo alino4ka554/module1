@@ -1,0 +1,215 @@
+ls
+ls           lsb_release  lsinitramfs  lslocks      lsmod        lspci
+lsattr       lscpu        lsipc        lslogins     lsns         lsusb
+lsblk        lsfd         lsirq        lsmem        lsof
+$HIST
+$HISTCMD       $HISTCONTROL   $HISTFILE      $HISTFILESIZE  $HISTSIZE
+echo $HISTSIZE 
+1000
+ls -d ~/.*
+/home/eltex-pg1-v24/.bash_history  /home/eltex-pg1-v24/.log
+/home/eltex-pg1-v24/.bash_logout   /home/eltex-pg1-v24/.profile
+/home/eltex-pg1-v24/.bashrc        /home/eltex-pg1-v24/.viminfo
+/home/eltex-pg1-v24/.config
+export HISTTIMEFORMAT='%F%T'
+history
+84  vi '$USER_part.log'
+   85  rm $USER_part.log
+   86  ls
+   87  rm '$USER_part.log'
+   88  ls
+   89  move USER_part.log '$USER_part.log'
+   90  mv USER_part.log '$USER_part.log'
+   91  ls
+   92  vi '$USER_part.log'
+   93  date
+   94*
+   95*
+   96  vi ~/.bash_history
+   97  date
+eltex-pg1-v24@eltex-2025-summer:~$ cat .bash_history | tail
+watch /usr/bin/vmstat
+a
+'
+screen -ls
+watch /usr/bin/vmstat
+screen -ls
+vi report_part1.txt
+ls
+cat report_part1.txt
+screen -ls
+eltex-pg1-v24@eltex-2025-summer:~$ export PROMPT_COMMAND="history -a"
+eltex-pg1-v24@eltex-2025-summer:~$ date
+Sun Jul 13 01:39:59 PM +07 2025
+eltex-pg1-v24@eltex-2025-summer:~$ history | tail
+  107  date
+  108  cat .bash_history | tail
+  109  vi '$USER_part.log'
+  110  export PROMPT_COMMAND = 'history -a'
+  111  export PROMPT_COMMAND="history -a"
+  112  date
+  113  history
+  114  export PROMPT_COMMAND="history -a"
+  115  date
+  116  history | tail
+eltex-pg1-v24@eltex-2025-summer:~$ cat .bash_history | tail
+date
+cat .bash_history | tail
+vi '$USER_part.log'
+export PROMPT_COMMAND = 'history -a'
+export PROMPT_COMMAND="history -a"
+date
+history
+export PROMPT_COMMAND="history -a"
+date
+history | tail
+eltex-pg1-v24@eltex-2025-summer:~$ DATE=$(date '+%Y-%m-%d')
+eltex-pg1-v24@eltex-2025-summer:~$ echo $DATE
+2025-07-13
+eltex-pg1-v24@eltex-2025-summer:~$ TIME=$(date '+%H-%M-%S')
+eltex-pg1-v24@eltex-2025-summer:~$ echo $TIME
+14-00-12
+eltex-pg1-v24@eltex-2025-summer:~$ DATE_TIME="$DATE $TIME"
+eltex-pg1-v24@eltex-2025-summer:~$ echo $DATE_TIME
+2025-07-13 14-00-12
+eltex-pg1-v24@eltex-2025-summer:~$ ls /bin/* /sbin/* | grep '[0-9]'
+/bin/addr2line
+/bin/b2sum
+/bin/base32
+/bin/base64
+/bin/bunzip2
+/bin/bzip2
+/bin/bzip2recover
+/bin/c89
+/bin/c89-gcc
+/bin/c99
+/bin/c99-gcc
+/bin/cpan5.36-x86_64-linux-gnu
+/bin/cpp-12
+/bin/diff3
+/bin/enc2xs
+/bin/gcc-12
+/bin/gcc-ar-12
+/bin/gcc-nm-12
+/bin/gcc-ranlib-12
+/bin/gcov-12
+/bin/gcov-dump-12
+/bin/gcov-tool-12
+/bin/grub-menulst2cfg
+/bin/grub-mkpasswd-pbkdf2
+/bin/grub-syslinux2cfg
+/bin/h2ph
+/bin/h2xs
+/bin/i386
+/bin/linux32
+/bin/linux64
+/bin/lto-dump-12
+/bin/md5sum
+/bin/md5sum.textutils
+/bin/pdb3
+/bin/pdb3.11
+/bin/perl5.36.0
+/bin/perl5.36-x86_64-linux-gnu
+/bin/ping4
+/bin/ping6
+/bin/pl2pm
+/bin/pod2html
+/bin/pod2man
+/bin/pod2text
+/bin/pod2usage
+/bin/py3clean
+/bin/py3compile
+/bin/py3versions
+/bin/pydoc3
+/bin/pydoc3.11
+/bin/pygettext3
+/bin/pygettext3.11
+/bin/python3
+/bin/python3.11
+/bin/sha1sum
+/bin/sha224sum
+/bin/sha256sum
+/bin/sha384sum
+/bin/sha512sum
+/bin/ssh-argv0
+/bin/systemd-id128
+/bin/traceroute6
+/bin/traceroute6.db
+/bin/x86_64
+/bin/x86_64-linux-gnu-addr2line
+/bin/x86_64-linux-gnu-ar
+/bin/x86_64-linux-gnu-as
+/bin/x86_64-linux-gnu-c++filt
+/bin/x86_64-linux-gnu-cpp
+/bin/x86_64-linux-gnu-cpp-12
+/bin/x86_64-linux-gnu-dwp
+/bin/x86_64-linux-gnu-elfedit
+/bin/x86_64-linux-gnu-gcc
+/bin/x86_64-linux-gnu-gcc-12
+/bin/x86_64-linux-gnu-gcc-ar
+/bin/x86_64-linux-gnu-gcc-ar-12
+/bin/x86_64-linux-gnu-gcc-nm
+/bin/x86_64-linux-gnu-gcc-nm-12
+/bin/x86_64-linux-gnu-gcc-ranlib
+/bin/x86_64-linux-gnu-gcc-ranlib-12
+/bin/x86_64-linux-gnu-gcov
+/bin/x86_64-linux-gnu-gcov-12
+/bin/x86_64-linux-gnu-gcov-dump
+/bin/x86_64-linux-gnu-gcov-dump-12
+/bin/x86_64-linux-gnu-gcov-tool
+/bin/x86_64-linux-gnu-gcov-tool-12
+/bin/x86_64-linux-gnu-gold
+/bin/x86_64-linux-gnu-gp-archive
+/bin/x86_64-linux-gnu-gp-collect-app
+/bin/x86_64-linux-gnu-gp-display-html
+/bin/x86_64-linux-gnu-gp-display-src
+/bin/x86_64-linux-gnu-gp-display-text
+/bin/x86_64-linux-gnu-gprof
+/bin/x86_64-linux-gnu-gprofng
+/bin/x86_64-linux-gnu-ld
+/bin/x86_64-linux-gnu-ld.bfd
+/bin/x86_64-linux-gnu-ld.gold
+/bin/x86_64-linux-gnu-lto-dump
+/bin/x86_64-linux-gnu-lto-dump-12
+/bin/x86_64-linux-gnu-nm
+/bin/x86_64-linux-gnu-objcopy
+/bin/x86_64-linux-gnu-objdump
+/bin/x86_64-linux-gnu-ranlib
+/bin/x86_64-linux-gnu-readelf
+/bin/x86_64-linux-gnu-size
+/bin/x86_64-linux-gnu-strings
+/bin/x86_64-linux-gnu-strip
+/sbin/dumpe2fs
+/sbin/e2freefrag
+/sbin/e2fsck
+/sbin/e2image
+/sbin/e2label
+/sbin/e2mmpstatus
+/sbin/e2scrub
+/sbin/e2scrub_all
+/sbin/e2undo
+/sbin/e4crypt
+/sbin/e4defrag
+/sbin/fsck.ext2
+/sbin/fsck.ext3
+/sbin/fsck.ext4
+/sbin/killall5
+/sbin/mke2fs
+/sbin/mkfs.ext2
+/sbin/mkfs.ext3
+/sbin/mkfs.ext4
+/sbin/resize2fs
+/sbin/tune2fs
+/sbin/update-grub2
+eltex-pg1-v24@eltex-2025-summer:~$ export PS1="\u@\h-$(date +%H:%M)> "
+eltex-pg1-v24@eltex-2025-summer-14:42> ^C
+eltex-pg1-v24@eltex-2025-summer-14:42> PROMPT_COMMAND='PS1="\u@\h-$(date +%H:%M)> "'
+eltex-pg1-v24@eltex-2025-summer-14:49>
+eltex-pg1-v24@eltex-2025-summer-14:54> mkdir -p $(date +%Y)-{01..12}
+eltex-pg1-v24@eltex-2025-summer-14:54> ls
+'$USER_part.log'   2025-03   2025-06   2025-09   2025-12
+ 2025-01           2025-04   2025-07   2025-10   report_part1.txt
+ 2025-02           2025-05   2025-08   2025-11
+
+
+

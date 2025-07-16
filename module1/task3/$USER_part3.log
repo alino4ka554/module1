@@ -1,0 +1,57 @@
+ mkdir -p D1/D2/D3
+eltex-pg1-v24@eltex-2025-summer-15:03> ls
+'$USER_part3.log'   2025-02   2025-05   2025-08   2025-11   report_part1.txt
+'$USER_part.log'    2025-03   2025-06   2025-09   2025-12
+ 2025-01            2025-04   2025-07   2025-10   D1
+eltex-pg1-v24@eltex-2025-summer-15:04> cd D1/D2
+eltex-pg1-v24@eltex-2025-summer-15:04> vi file.txt
+eltex-pg1-v24@eltex-2025-summer-15:07> ls
+D3  file.txt
+cd D3
+ln ../file.txt hardlink.txt
+ln -s ../file.txt softlink.txt
+eltex-pg1-v24@eltex-2025-summer:$ ls -ali
+total 12
+917591 drwxr-xr-x 2 eltex-pg1-v24 eltex-pg1-v24 4096 Jul 13 15:22 .
+917588 drwxr-xr-x 3 eltex-pg1-v24 eltex-pg1-v24 4096 Jul 13 15:14 ..
+917595 -rw-r--r-- 2 eltex-pg1-v24 eltex-pg1-v24   27 Jul 13 15:14 hardlink.txt
+917576 lrwxrwxrwx 1 eltex-pg1-v24 eltex-pg1-v24   11 Jul 13 15:22 softlink.txt -> ../file.txt
+eltex-pg1-v24@eltex-2025-summer:~/D1/D2/D3$ cd ..
+eltex-pg1-v24@eltex-2025-summer:~/D1/D2$ ls -ali
+total 20
+917588 drwxr-xr-x 3 eltex-pg1-v24 eltex-pg1-v24 4096 Jul 13 15:14  .
+917572 drwxr-xr-x 3 eltex-pg1-v24 eltex-pg1-v24 4096 Jul 13 15:03  ..
+917592 -rw-r--r-- 1 eltex-pg1-v24 eltex-pg1-v24  442 Jul 13 15:08 '$USER_part3.log'
+917591 drwxr-xr-x 2 eltex-pg1-v24 eltex-pg1-v24 4096 Jul 13 15:22  D3
+917595 -rw-r--r-- 2 eltex-pg1-v24 eltex-pg1-v24   27 Jul 13 15:14  file.txt
+eltex-pg1-v24@eltex-2025-summer:~/D1/D2$
+eltex-pg1-v24@eltex-2025-summer:~/D1/D2$ mv file.txt ../file.txt
+eltex-pg1-v24@eltex-2025-summer:~/D1/D2$ ls
+D3
+eltex-pg1-v24@eltex-2025-summer:~/D1/D2$ cd ..
+eltex-pg1-v24@eltex-2025-summer:~/D1$ ls
+D2  file.txt
+eltex-pg1-v24@eltex-2025-summer:~$ cd D2/D3
+eltex-pg1-v24@eltex-2025-summer:~/D1/D2/D3$ cat hardlink.txt
+текст какой-то
+eltex-pg1-v24@eltex-2025-summer:~/D1/D2/D3$ cat softlink.txt
+cat: softlink.txt: No such file or directory
+работает жесткая ссылка. т.к. она связана с inode
+eltex-pg1-v24@eltex-2025-summer:~/D1$ find / -size +20M -exec du -h {} + > '$USR_part3_gt50M.log'
+eltex-pg1-v24@eltex-2025-summer:~$ find . -type f -mtime -1
+./.viminfo
+./D1/file.txt
+./$USER_part3_gt50M.log
+./.bash_history
+./.vim/.netrwhist
+./$USER_part.log
+./$USER_part3.log
+eltex-pg1-v24@eltex-2025-summer:~$ which find
+/usr/bin/find
+eltex-pg1-v24@eltex-2025-summer:~$ file $(which find)
+/usr/bin/find: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=5545a6c7162d325fbe5ffabcbfe4e5521b66ce70, for GNU/Linux 3.2.0, stripped
+eltex-pg1-v24@eltex-2025-summer:~$ file /boot/initrd.img*
+/boot/initrd.img-6.1.0-27-amd64: ASCII cpio archive (SVR4 with no CRC)
+/boot/initrd.img-6.1.0-31-amd64: ASCII cpio archive (SVR4 with no CRC)
+/boot/initrd.img-6.1.0-32-amd64: ASCII cpio archive (SVR4 with no CRC)
+
