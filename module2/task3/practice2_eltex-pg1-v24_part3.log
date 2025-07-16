@@ -1,0 +1,206 @@
+root@eltex-practice2-pg1-v24:~# git config --global user.name alino4ka554
+root@eltex-practice2-pg1-v24:~# git config --global user.email alina_10112004@ma
+root@eltex-practice2-pg1-v24:~# git config --global init.defaultBranch main
+root@eltex-practice2-pg1-v24:~# apt update
+Hit:1 http://ru.archive.ubuntu.com/ubuntu noble InRelease
+Hit:2 http://security.ubuntu.com/ubuntu noble-security InRelease
+Hit:3 http://ru.archive.ubuntu.com/ubuntu noble-updates InRelease
+Hit:4 http://ru.archive.ubuntu.com/ubuntu noble-backports InRelease
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+69 packages can be upgraded. Run 'apt list --upgradable' to see them.
+root@eltex-practice2-pg1-v24:~# apt install git gh
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+git is already the newest version (1:2.43.0-1ubuntu7.3).
+git set to manually installed.
+The following NEW packages will be installed:
+  gh
+0 upgraded, 1 newly installed, 0 to remove and 69 not upgraded.
+Need to get 8,826 kB of archives.
+After this operation, 45.4 MB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+Get:1 http://ru.archive.ubuntu.com/ubuntu noble-updates/universe amd64 gh amd64
+Fetched 8,826 kB in 1s (10.5 MB/s)
+Selecting previously unselected package gh.
+(Reading database ... 124882 files and directories currently installed.)
+Preparing to unpack .../gh_2.45.0-1ubuntu0.2_amd64.deb ...
+Unpacking gh (2.45.0-1ubuntu0.2) ...
+Setting up gh (2.45.0-1ubuntu0.2) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Scanning processes...
+Scanning candidates...
+Scanning linux images...
+
+Pending kernel upgrade!
+Running kernel version:
+  6.8.0-55-generic
+Diagnostics:
+  The currently running kernel version is not the expected kernel version 6.8.0-
+
+Restarting the system to load the new kernel will not be handled automatically,
+
+Restarting services...
+
+Service restarts being deferred:
+ /etc/needrestart/restart.d/dbus.service
+ systemctl restart getty@tty1.service
+ systemctl restart systemd-logind.service
+ systemctl restart unattended-upgrades.service
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+root@eltex-practice2-pg1-v24:~# ssh-keygen -t ed25519 -f ~/.ssh/alino4ka55
+Generating public/private ed25519 key pair.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+
+root@eltex-practice2-pg1-v24:~# ssh-keygen -t ed25519 -f ~/.ssh/alino4ka554
+Generating public/private ed25519 key pair.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /root/.ssh/alino4ka554
+Your public key has been saved in /root/.ssh/alino4ka554.pub
+The key fingerprint is:
+SHA256:X2JKXVIm3U9C6yOgqWJ964DyLjxKgWcyiAT/9MnxQ9c root@eltex-practice2-pg1-v24
+The key's randomart image is:
++--[ED25519 256]--+
+|.         ..oo.  |
+|..         =. o..|
+| .. . . . + E .+ |
+|=  o o = = + .  .|
+|*.o . + S + o o  |
+| =.  o o = o . . |
+| o. + + o .      |
+|. ++ . o .       |
+|.. +o  .o        |
+? What is your preferred protocol for Git operations on this host? SSH
+? Upload your SSH public key to your GitHub account? /root/.ssh/alino4ka554.pub
+? Title for your SSH key: eltex-practice2-pg1-v24
+? How would you like to authenticate GitHub CLI? Login with a web browser
+
+! First copy your one-time code: E0D0-CDE1
+Press Enter to open github.com in your browser...
+! Failed opening a web browser at https://github.com/login/device
+  exec: "xdg-open,x-www-browser,www-browser,wslview": executable file not found in $PATH
+  Please try entering the URL in your browser manually
+✓ Authentication complete.
+- gh config set -h github.com git_protocol ssh
+✓ Configured git protocol
+! Authentication credentials saved in plain text
+✓ Uploaded the SSH key to your GitHub account: /root/.ssh/alino4ka554.pub
+✓ Logged in as alino4ka554
+root@eltex-practice2-pg1-v24:~# gh auth setup-git --hostname github.com
+root@eltex-practice2-pg1-v24:~# gh auth status
+github.com
+  ✓ Logged in to github.com account alino4ka554 (/root/.config/gh/hosts.yml)
+  - Active account: true
+  - Git operations protocol: ssh
+  - Token: gho_************************************
+  - Token scopes: 'admin:public_key', 'gist', 'read:org', 'repo'
+
+root@eltex-practice2-pg1-v24:~# gh repo create --public module1
+✓ Created repository alino4ka554/module1 on GitHub
+  https://github.com/alino4ka554/module1
+root@eltex-practice2-pg1-v24:~# mkdir ~/module1 && cd ~/module1
+root@eltex-practice2-pg1-v24:~/module1# echo "# первый модуль" >> README.md     root@eltex-practice2-pg1-v24:~/module1# git init
+Initialized empty Git repository in /root/module1/.git/
+root@eltex-practice2-pg1-v24:~/module1# git add README.md
+root@eltex-practice2-pg1-v24:~/module1# git commit -m "first commit"
+[main (root-commit) cce8f89] first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+root@eltex-practice2-pg1-v24:~/module1# git branch -M main
+root@eltex-practice2-pg1-v24:~/module1# git remote add origin https://github.com/alino4ka554/module1.git
+root@eltex-practice2-pg1-v24:~/module1# git status
+On branch main
+nothing to commit, working tree clean
+root@eltex-practice2-pg1-v24:~/module1# git push -u origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 241 bytes | 241.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/alino4ka554/module1.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+root@eltex-practice2-pg1-v24:~/module1# mkdir -p module1/task1
+root@eltex-practice2-pg1-v24:~/module1# mkdir -p module1/task2
+root@eltex-practice2-pg1-v24:~/module1# mkdir -p module1/task3
+
+root@eltex-practice2-pg1-v24:~# exit
+logout
+Connection to 172.16.9.198 closed.
+eltex-pg1-v24@eltex-2025-summer:~$ ls
+'$USER_part3_gt50M.log'   2025-02   2025-06   2025-10   report_part1.txt
+'$USER_part3.log'         2025-03   2025-07   2025-11
+'$USER_part.log'          2025-04   2025-08   2025-12
+ 2025-01                  2025-05   2025-09   D1
+eltex-pg1-v24@eltex-2025-summer:~$ scp report_part1.txt root@172.16.9.198:/root/module1/task1
+report_part1.txt                              100%  123   377.8KB/s   00:00
+eltex-pg1-v24@eltex-2025-summer:~$ scp '$USER_part.log' root@172.16.9.198:/root/module1/task2
+$USER_part.log                                100% 5269   259.8KB/s   00:00
+eltex-pg1-v24@eltex-2025-summer:~$ scp '$USER_part3.log' root@172.16.9.198:/root/module1/task3
+$USER_part3.log                               100% 2763     2.8MB/s   00:00
+eltex-pg1-v24@eltex-2025-summer:~$ scp '$USER_part3_gt50M.log' root@172.16.9.198:/root/module1/task3
+$USER_part3_gt50M.log                         100%  615   562.6KB/s   00:00
+root@eltex-practice2-pg1-v24:~/module1# rm task1
+root@eltex-practice2-pg1-v24:~/module1# rm task2
+root@eltex-practice2-pg1-v24:~/module1# rm task3
+root@eltex-practice2-pg1-v24:~/module1# ls
+module1  README.md
+root@eltex-practice2-pg1-v24:~/module1# cd ..
+root@eltex-practice2-pg1-v24:~# exit
+logout
+Connection to 172.16.9.198 closed.
+eltex-pg1-v24@eltex-2025-summer:~$ scp report_part1.txt root@172.16.9.198:/root/module1/module1/task1
+report_part1.txt                              100%  123   402.3KB/s   00:00
+eltex-pg1-v24@eltex-2025-summer:~$ scp '$USER_part.log' root@172.16.9.198:/root/module1/module1/task2
+$USER_part.log                                100% 5269     8.3MB/s   00:00
+eltex-pg1-v24@eltex-2025-summer:~$ scp '$USER_part3.log' root@172.16.9.198:/root/module1/module1/task3
+$USER_part3.log                               100% 2763     7.7MB/s   00:00
+eltex-pg1-v24@eltex-2025-summer:~$ scp '$USER_part3_gt50M.log' root@172.16.9.198:/root/module1/module1/task3
+$USER_part3_gt50M.log                         100%  615     1.6MB/s   00:00
+eltex-pg1-v24@eltex-2025-summer:~$ ssh root@172.16.9.198                  
+root@eltex-practice2-pg1-v24:~/module1/module1# git add .
+root@eltex-practice2-pg1-v24:~/module1/module1# git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   task1/report_part1.txt
+        new file:   task2/$USER_part.log
+        new file:   task3/$USER_part3.log
+        new file:   task3/$USER_part3_gt50M.log
+
+root@eltex-practice2-pg1-v24:~/module1/module1# git commit 'первая практика'
+error: pathspec 'первая практика' did not match any file(s) known to git
+root@eltex-practice2-pg1-v24:~/module1/module1# git commit
+[main 9012dbd] первая практика
+ 4 files changed, 286 insertions(+)
+ create mode 100644 module1/task1/report_part1.txt
+ create mode 100644 module1/task2/$USER_part.log
+ create mode 100644 module1/task3/$USER_part3.log
+ create mode 100644 module1/task3/$USER_part3_gt50M.log
+root@eltex-practice2-pg1-v24:~/module1/module1# git push
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (10/10), 3.21 KiB | 3.21 MiB/s, done.
+Total 10 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/alino4ka554/module1.git
+   cce8f89..9012dbd  main -> main
+root@eltex-practice2-pg1-v24:~# mkdir ~/module1_clone && cd ~/module1_clone     root@eltex-practice2-pg1-v24:~/module1_clone# git clone https://github.com/alino4ka554/module1.git .
+Cloning into '.'...
+remote: Enumerating objects: 13, done.
+remote: Counting objects: 100% (13/13), done.
+remote: Compressing objects: 100% (9/9), done.
+remote: Total 13 (delta 0), reused 13 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (13/13), done.
+ 
